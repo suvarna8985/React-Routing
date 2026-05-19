@@ -1,0 +1,36 @@
+.card{
+    border-radius: 10px;
+    padding: 15pxs;
+    box-shadow: 0px 0px 10px lightgray;
+    border: 1px solid gray;
+
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+
+}
+
+.card.inside{
+    border:2px solid black;
+    margin-bottom:20px;
+    padding:20px;
+}
+
+.searchBox{
+    margin:20px;
+    text-align:center;
+}
+
+.searchBox input{
+    width:300px;
+    height:45px;
+
+    padding-left:15px;
+
+    border-radius:8px;
+    border:1px solid gray;
+
+    font-size:16px;
+
+    outline:none;
+}

@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React ,{ useState}  from 'react'
 import axios from "axios";
 
 export default function AddDoctor() {
@@ -31,26 +32,26 @@ export default function AddDoctor() {
 
   return (
     <div>
-      <form action="" onSubmit={handleSubmit()}>
-        <input type="text" placeholder='enter doctor name' value={"name"}
+      <form action="" onSubmit={handleSubmit}>
+        <input type="text" placeholder='enter doctor name' value={name}
         onChange={(e)=>setName(e.target.value)}/>
         <br></br>
-        <input type="text" placeholder='enter doctor salary' value={"salary"}
+        <input type="text" placeholder='enter doctor salary' value={salary}
         onChange={(e)=>setSalary(e.target.value)}/>
          <br></br>
-         <input type="text" placeholder='enter doctor age' value={"age"}
+         <input type="text" placeholder='enter doctor age' value={age}
         onChange={(e)=>setAge(e.target.value)}/>
          <br></br>
         
         
-        <select name="" id=""   value={"gender"}
+        <select   value={gender}
         onChange={(e)=>setGender(e.target.value)}>
             <option value="">Enter Gender</option>
             <option value="male">Male</option>
             <option value="female">FeMale</option>
         </select>
          <br></br>
-        <input type="text" placeholder='enterspecialization' value={"specialization"}
+        <input type="text" placeholder='enterspecialization' value={specialization}
          onChange={(e)=>setSpecialization(e.target.value)}/>
          <br></br>
         <button>Add Doctor</button>

@@ -31,7 +31,7 @@ export default function EditDoctor() {
 
     function updateDoctor(e){
         e.preventDefault()
-        axios.put(`https://doc-back.onrender.com/${id}`,{
+        axios.put(`https://doc-back.onrender.com/doctors/${id}`,{
             name,salary,gender,age,specialization
 
         })
@@ -47,28 +47,28 @@ export default function EditDoctor() {
     <div>
         
       <form action="" onSubmit={updateDoctor}>
-        <input type="text" placeholder='enter doctor name' value={"name"}
+        <input type="text" placeholder='enter doctor name' value={name}
         onChange={(e)=>setName(e.target.value)}/>
         <br></br>
-        <input type="text" placeholder='enter doctor salary' value={"salary"}
+        <input type="text" placeholder='enter doctor salary' value={salary}
         onChange={(e)=>setSalary(e.target.value)}/>
          <br></br>
-         <input type="text" placeholder='enter doctor age' value={"age"}
+         <input type="text" placeholder='enter doctor age' value={age}
         onChange={(e)=>setAge(e.target.value)}/>
          <br></br>
         
         
-        <select name="" id=""   value={"gender"}
+        <select name="" id=""   value={gender}
         onChange={(e)=>setGender(e.target.value)}>
             <option value="">Enter Gender</option>
             <option value="male">Male</option>
             <option value="female">FeMale</option>
         </select>
          <br></br>
-        <input type="text" placeholder='enterspecialization' value={"specialization"}
+        <input type="text" placeholder='enterspecialization' value={specialization}
          onChange={(e)=>setSpecialization(e.target.value)}/>
          <br></br>
-        <button>Add Doctor</button>
+        <button>Update Doctor</button>
       </form>
     
     </div>

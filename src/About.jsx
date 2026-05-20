@@ -1,10 +1,10 @@
 import React from 'react'
-import axios, { formToJSON } from 'axios'
+import axios from 'axios'
 import {useState,useEffect } from 'react'
 import './card1.css'
 import DoctorCard from './DoctorCard'
 
-export default function about() {
+export default function About() {
   const[doctors,setDoctors]=useState([])
   const[search,setSearch]=useState("")
 
@@ -36,7 +36,7 @@ function loadData(){
 //console.log(doctors)
 
 function handleSearch(e){
-  console.log(e.targer.value);
+  console.log(e.target.value);
   setSearch(e.target.value)
 }
 

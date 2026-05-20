@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import {useState,useEffect } from 'react'
-import './card1.css'
+import './Card1.css'
 import DoctorCard from './DoctorCard'
 
 export default function About() {

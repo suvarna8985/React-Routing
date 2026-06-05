@@ -15,25 +15,48 @@ export default function About() {
   },[])
   //dependency array
 
-const filterDoctors=doctors.filter((doctor)=>(
-  doctor.name.toLowerCase().includes(search.toLowerCase())
-))
+// const filterDoctors=doctors.filter((doctor)=>(
+//   doctor.name.toLowerCase().includes(search.toLowerCase())
+// ))
+
+// useMemo
+
+const filterDoctors=useMemo(()=>{
+  return doctors.filter((doctor)=>(
+    doctor.name.toLowerCase().includes(search.toLowerCase())
+
+  ))
+},[search,doctors])
 
 
 //getdata
-function loadData(){
-       axios.get("https://doc-back.onrender.com/doctors")
-   .then((result)=>{
+// function loadData(){
+//        axios.get("https://doc-back.onrender.com/doctors")
+//    .then((result)=>{
+//     console.log(result)
+//     console.log(result.data);
+//     setDoctors(result.data)
+  
+
+// }).catch((error)=>{
+//   console.log(error)
+//   alert('errororoeer')
+// })
+
+
+// }
+//console.log(doctors)
+
+async function loadData(){
+  try{
+    const result=await axios.get("https://doc-back onrender.com/doctors")
     console.log(result)
     console.log(result.data);
     setDoctors(result.data)
-  
-
-})
-
-
+  }catch(error){
+    console.log(error)
+  }
 }
-//console.log(doctors)
 
 function handleSearch(e){
   console.log(e.target.value);
